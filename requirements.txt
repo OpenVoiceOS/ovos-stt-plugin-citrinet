@@ -1,0 +1,4 @@
+ovos-plugin-manager>=0.0.24
+ovos-utils~=0.0,>=0.0.30
+streaming-stt-nemo~=0.2
+SpeechRecognition~=3.8
