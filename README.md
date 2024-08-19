@@ -16,13 +16,15 @@ OpenVoiceOS STT plugin for [Nemo Citrinet](https://docs.nvidia.com/nemo-framewor
 ```json
   "stt": {
     "module": "ovos-stt-plugin-citrinet",
-    "ovos-stt-plugin-citrinet": {}
+    "ovos-stt-plugin-citrinet": {
+        "lang": "ca"
+    }
   }
 ```
 
 ## Credits
 
-[NeonGeckoCom/streaming-stt-nemo](https://github.com/NeonGeckoCom/streaming-stt-nemo) - base citrinet onnx runtime implementation, provides models for `'en', 'es', 'fr', 'de', 'it', 'uk', 'nl', 'pt'`
+[NeonGeckoCom/streaming-stt-nemo](https://github.com/NeonGeckoCom/streaming-stt-nemo) - base citrinet onnx runtime implementation, provides [models](https://huggingface.co/collections/neongeckocom/neon-stt-663ca3c1a55b063463cb0167) for `'en', 'es', 'fr', 'de', 'it', 'uk', 'nl', 'pt'`
 
 [Aina Project's Catalan STT model](https://huggingface.co/projecte-aina/stt-ca-citrinet-512) - was fine-tuned from a pre-trained Spanish stt-es-citrinet-512 model using the NeMo toolkit. It has around 36.5M parámeters and has been trained on Common Voice 11.0.
 
