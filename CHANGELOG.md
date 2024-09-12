@@ -1,8 +1,17 @@
 # Changelog
 
-## [Unreleased](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/HEAD)
+## [0.0.1a2](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.1a2) (2024-09-12)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/c10bd6c8f95fb1c082a47df32dc9bb36d384a14f...HEAD)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/VNone.None.None...0.0.1a2)
+
+**Merged pull requests:**
+
+- feat:semver [\#3](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/3) ([JarbasAl](https://github.com/JarbasAl))
+- fixed for correct versioning [\#2](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/2) ([builderjer](https://github.com/builderjer))
+
+## [VNone.None.None](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/VNone.None.None) (2024-08-19)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/c10bd6c8f95fb1c082a47df32dc9bb36d384a14f...VNone.None.None)
 
 **Implemented enhancements:**
 
