@@ -55,7 +55,7 @@ class CitrinetSTT(STT):
 
 if __name__ == "__main__":
 
-    b = CitrinetSTT()
+    b = CitrinetSTT({"lang": "ca"})
     from speech_recognition import Recognizer, AudioFile
 
     jfk = "/home/miro/PycharmProjects/ovos-stt-plugin-vosk/example.wav"
@@ -65,4 +65,5 @@ if __name__ == "__main__":
     a = b.execute(audio, language="ca")
     print(a)
     # bon dia em dic abram orriols i garcia vaig néixer el vint de desembre del mil noucents norantasis a berga i sóc periodista
+    # bon dia em dic abramriols i garcia vaig néixer el vint de desembre del mil nou-cents noranta-sis a berga i sóc periodista
 
