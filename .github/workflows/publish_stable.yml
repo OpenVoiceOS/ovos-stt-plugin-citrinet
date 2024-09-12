@@ -10,7 +10,7 @@ jobs:
     secrets: inherit
     with:
       branch: 'master'
-      version_file: 'ovos_stt_plugin_citrinetovos_tts_plugin_cotovia/version.py'
+      version_file: 'ovos_stt_plugin_citrinet/version.py'
       setup_py: 'setup.py'
       publish_release: true
 
