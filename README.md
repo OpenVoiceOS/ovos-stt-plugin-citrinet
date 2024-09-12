@@ -32,4 +32,4 @@ OpenVoiceOS STT plugin for [Nemo Citrinet](https://docs.nvidia.com/nemo-framewor
 > This work is funded by the Ministerio para la Transformación Digital y de la Función Pública and Plan de Recuperación, Transformación y Resiliencia - Funded by EU – NextGenerationEU within the framework of the project ILENIA with reference 2022/TL22/00215337
 
 ![img_1.png](img_1.png)
-> Catalan STT was funded by the Generalitat de Catalunya within the framework of [Projecte AINA](https://politiquesdigitals.gencat.cat/ca/economia/catalonia-ai/aina).
+> STT model was funded by the Generalitat de Catalunya within the framework of [Projecte AINA](https://politiquesdigitals.gencat.cat/ca/economia/catalonia-ai/aina).
