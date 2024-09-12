@@ -24,12 +24,14 @@ OpenVoiceOS STT plugin for [Nemo Citrinet](https://docs.nvidia.com/nemo-framewor
 
 ## Credits
 
-[NeonGeckoCom/streaming-stt-nemo](https://github.com/NeonGeckoCom/streaming-stt-nemo) - base citrinet onnx runtime implementation, provides [models](https://huggingface.co/collections/neongeckocom/neon-stt-663ca3c1a55b063463cb0167) for `'en', 'es', 'fr', 'de', 'it', 'uk', 'nl', 'pt'`
+<img src="img.png" width="128"/>
 
-[Aina Project's Catalan STT model](https://huggingface.co/projecte-aina/stt-ca-citrinet-512) - was fine-tuned from a pre-trained Spanish stt-es-citrinet-512 model using the NeMo toolkit. It has around 36.5M parámeters and has been trained on Common Voice 11.0.
+> This plugin was funded by the Ministerio para la Transformación Digital y de la Función Pública and Plan de Recuperación, Transformación y Resiliencia - Funded by EU – NextGenerationEU within the framework of the project ILENIA with reference 2022/TL22/00215337
 
-![img.png](img.png)
-> This work is funded by the Ministerio para la Transformación Digital y de la Función Pública and Plan de Recuperación, Transformación y Resiliencia - Funded by EU – NextGenerationEU within the framework of the project ILENIA with reference 2022/TL22/00215337
+<img src="img_1.png"  width="64"/>
 
-![img_1.png](img_1.png)
-> STT model was funded by the Generalitat de Catalunya within the framework of [Projecte AINA](https://politiquesdigitals.gencat.cat/ca/economia/catalonia-ai/aina).
+> [projecte-aina/stt-ca-citrinet-512](https://huggingface.co/projecte-aina/stt-ca-citrinet-512) was funded by the Generalitat de Catalunya within the framework of [Projecte AINA](https://politiquesdigitals.gencat.cat/ca/economia/catalonia-ai/aina).
+
+<img src="img_2.png"  width="64"/>
+
+> [NeonGeckoCom/streaming-stt-nemo](https://github.com/NeonGeckoCom/streaming-stt-nemo) - base citrinet onnx runtime implementation, provides [models](https://huggingface.co/collections/neongeckocom/neon-stt-663ca3c1a55b063463cb0167) for `'en', 'es', 'fr', 'de', 'it', 'uk', 'nl', 'pt'`
