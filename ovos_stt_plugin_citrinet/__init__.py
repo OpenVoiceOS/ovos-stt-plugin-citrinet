@@ -39,6 +39,7 @@ class CitrinetSTT(STT):
         Returns:
                     text (str): recognized text
         '''
+        language = language or self.lang
         lang = language.split("-")[0]
         if lang not in available_languages:
             raise ValueError(f"unsupported language, must be one of {available_languages}")
