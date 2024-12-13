@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.4a2](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.4a2) (2024-12-13)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.4a1...0.0.4a2)
+
+**Merged pull requests:**
+
+- reduce dependencies [\#10](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/10) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.4a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.4a1) (2024-12-13)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.3...0.0.4a1)
