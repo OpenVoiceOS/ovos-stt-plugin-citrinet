@@ -1,4 +1,4 @@
-# taken from https://github.com/NeonGeckoCom/streaming-stt-nemo
+# modified from https://github.com/NeonGeckoCom/streaming-stt-nemo
 
 # NEON AI (TM) SOFTWARE, Software Development Kit & Application Framework
 # All trademark and other rights reserved by their respective owners
@@ -31,6 +31,7 @@
 import ctypes
 import gc
 import os.path
+from typing import Optional
 
 import numpy as np
 import onnxruntime as ort
@@ -39,46 +40,41 @@ import torch  # TODO - try to drop dependency if we can convert preprocessor to 
 from huggingface_hub import hf_hub_download
 from ovos_utils.log import LOG
 
-languages = {
-    "en": {
-        "model": "neongeckocom/stt_en_citrinet_512_gamma_0_25",
-    },
-    "es": {
-        "model": "neongeckocom/stt_es_citrinet_512_gamma_0_25",
-    },
-    "fr": {
-        "model": "neongeckocom/stt_fr_citrinet_512_gamma_0_25",
-    },
-    "de": {
-        "model": "neongeckocom/stt_de_citrinet_512_gamma_0_25",
-    },
-    "it": {
-        "model": "neongeckocom/stt_it_citrinet_512_gamma_0_25",
-    },
-    "uk": {
-        "model": "neongeckocom/stt_uk_citrinet_512_gamma_0_25",
-    },
-    "nl": {
-        "model": "neongeckocom/stt_nl_citrinet_512_gamma_0_25",
-    },
-    "pt": {
-        "model": "neongeckocom/stt_pt_citrinet_512_gamma_0_25",
-    },
-    "ca": {
-        "model": "projecte-aina/stt-ca-citrinet-512"
-    },
-}
-
-sample_rate = 16000
-subfolder_name = "onnx"
-available_languages = list(languages.keys())
-
 
 class Model:
-    langs = languages
-    sample_rate = sample_rate
+    langs = {
+        "en": {
+            "model": "neongeckocom/stt_en_citrinet_512_gamma_0_25",
+        },
+        "es": {
+            "model": "neongeckocom/stt_es_citrinet_512_gamma_0_25",
+        },
+        "fr": {
+            "model": "neongeckocom/stt_fr_citrinet_512_gamma_0_25",
+        },
+        "de": {
+            "model": "neongeckocom/stt_de_citrinet_512_gamma_0_25",
+        },
+        "it": {
+            "model": "neongeckocom/stt_it_citrinet_512_gamma_0_25",
+        },
+        "uk": {
+            "model": "neongeckocom/stt_uk_citrinet_512_gamma_0_25",
+        },
+        "nl": {
+            "model": "neongeckocom/stt_nl_citrinet_512_gamma_0_25",
+        },
+        "pt": {
+            "model": "neongeckocom/stt_pt_citrinet_512_gamma_0_25",
+        },
+        "ca": {
+            "model": "projecte-aina/stt-ca-citrinet-512"
+        },
+    }
+    sample_rate = 16000
+    subfolder_name = "onnx"
 
-    def __init__(self, lang="en", model_folder=None):
+    def __init__(self, lang: str, model_folder: Optional[str] = None):
         if model_folder:
             self._init_model_from_path(model_folder)
         else:
@@ -108,21 +104,21 @@ class Model:
         if os.path.isfile(model_name):
             preprocessor_path = model_name
         else:
-            preprocessor_path = hf_hub_download(model_name, "preprocessor.ts", subfolder=subfolder_name)
+            preprocessor_path = hf_hub_download(model_name, "preprocessor.ts", subfolder=self.subfolder_name)
         self.preprocessor = torch.jit.load(preprocessor_path)
 
     def _init_encoder(self, model_name: str):
         if os.path.isfile(model_name):
             encoder_path = model_name
         else:
-            encoder_path = hf_hub_download(model_name, "model.onnx", subfolder=subfolder_name)
+            encoder_path = hf_hub_download(model_name, "model.onnx", subfolder=self.subfolder_name)
         self.encoder = ort.InferenceSession(encoder_path)
 
     def _init_tokenizer(self, model_name: str):
         if os.path.isfile(model_name):
             tokenizer_path = model_name
         else:
-            tokenizer_path = hf_hub_download(model_name, "tokenizer.spm", subfolder=subfolder_name)
+            tokenizer_path = hf_hub_download(model_name, "tokenizer.spm", subfolder=self.subfolder_name)
         self.tokenizer = spm.SentencePieceProcessor(tokenizer_path)
 
     def _run_preprocessor(self, audio_16k: np.array):
@@ -185,7 +181,8 @@ class Model:
         try:
             import soxr
         except ImportError:
-            LOG.error("Either provide audio at 16000 sample rate or install soxr for automatic resampling")
+            LOG.error(
+                f"Either provide audio at {self.sample_rate} sample rate or install soxr for automatic resampling")
             raise
         audio_16k = soxr.resample(audio_fp32, sr, self.sample_rate)
         return audio_16k
@@ -196,4 +193,4 @@ class Model:
         return audio_fp32
 
 
-__all__ = ["Model", "available_languages"]
+__all__ = ["Model"]

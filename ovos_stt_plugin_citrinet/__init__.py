@@ -5,7 +5,7 @@ from ovos_plugin_manager.templates.stt import STT
 from ovos_utils.log import LOG
 from speech_recognition import AudioData
 
-from ovos_stt_plugin_citrinet.engine import Model, available_languages
+from ovos_stt_plugin_citrinet.engine import Model
 
 
 class CitrinetSTT(STT):
@@ -15,8 +15,8 @@ class CitrinetSTT(STT):
         self.lang = self.config.get('lang') or "ca"
         self.models: Dict[str, Model] = {}
         lang = self.lang.split("-")[0]
-        if lang not in available_languages:
-            raise ValueError(f"unsupported language, must be one of {available_languages}")
+        if lang not in self.available_languages:
+            raise ValueError(f"unsupported language, must be one of {self.available_languages}")
         LOG.info(f"preloading model: {Model.langs[lang]}")
         self.load_model(lang)
 
@@ -27,7 +27,7 @@ class CitrinetSTT(STT):
 
     @property
     def available_languages(self) -> set:
-        return set(available_languages)
+        return set(Model.langs)
 
     def execute(self, audio: AudioData, language: Optional[str] = None):
         '''
@@ -40,8 +40,8 @@ class CitrinetSTT(STT):
         '''
         language = language or self.lang
         lang = language.split("-")[0]
-        if lang not in available_languages:
-            raise ValueError(f"unsupported language, must be one of {available_languages}")
+        if lang not in self.available_languages:
+            raise ValueError(f"unsupported language, must be one of {self.available_languages}")
         model = self.load_model(lang)
 
         audio_buffer = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
