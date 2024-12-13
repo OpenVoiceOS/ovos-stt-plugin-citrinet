@@ -1,20 +1,12 @@
 # Changelog
 
-## [0.0.3a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.3a1) (2024-10-03)
+## [0.0.4a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.4a1) (2024-12-13)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.2a1...0.0.3a1)
-
-**Merged pull requests:**
-
-- fix:handle optional kwarg [\#6](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/6) ([JarbasAl](https://github.com/JarbasAl))
-
-## [0.0.2a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.2a1) (2024-09-25)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.1...0.0.2a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.3...0.0.4a1)
 
 **Merged pull requests:**
 
-- documentation:add WER [\#4](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/4) ([JarbasAl](https://github.com/JarbasAl))
+- packaging:drop dependency on neon package [\#8](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/8) ([JarbasAl](https://github.com/JarbasAl))
 
 
 
