@@ -86,6 +86,8 @@ class Model:
             self._init_model(lang)
 
     def _init_model(self, lang: str):
+        if lang not in self.langs:
+            raise ValueError(f"Unsupported language '{lang}'. Available languages: {list(self.langs.keys())}")
         model_name = self.langs[lang]["model"]
         self._init_preprocessor(model_name)
         self._init_encoder(model_name)
