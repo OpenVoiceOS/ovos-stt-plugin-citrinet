@@ -35,10 +35,9 @@ import os.path
 import numpy as np
 import onnxruntime as ort
 import sentencepiece as spm
-import soxr
-import torch
+import torch  # TODO - try to drop dependency if we can convert preprocessor to onnx, currently not possible
 from huggingface_hub import hf_hub_download
-from pydub import AudioSegment
+from ovos_utils.log import LOG
 
 languages = {
     "en": {
@@ -152,7 +151,6 @@ class Model:
     @staticmethod
     def _ctc_decode(logits: np.array, blank_id: int):
         labels = logits.argmax(axis=1).tolist()
-
         previous = blank_id
         decoded_prediction = []
         for p in labels:
@@ -172,19 +170,6 @@ class Model:
         self._trim_memory()
         return current_hypotheses
 
-    def stt_file(self, file_path: str):
-        audio_buffer, sr = self.read_file(file_path)
-        current_hypotheses = self.stt(audio_buffer, sr)
-        return current_hypotheses
-
-    def read_file(self, file_path: str):
-        audio_file = AudioSegment.from_file(file_path)
-        sr = audio_file.frame_rate
-
-        samples = audio_file.get_array_of_samples()
-        audio_buffer = np.array(samples)
-        return audio_buffer, sr
-
     @staticmethod
     def _trim_memory():
         """
@@ -195,10 +180,18 @@ class Model:
         gc.collect()
 
     def _resample(self, audio_fp32: np.array, sr: int):
+        if sr == self.sample_rate:
+            return audio_fp32
+        try:
+            import soxr
+        except ImportError:
+            LOG.error("Either provide audio at 16000 sample rate or install soxr for automatic resampling")
+            raise
         audio_16k = soxr.resample(audio_fp32, sr, self.sample_rate)
         return audio_16k
 
-    def _to_float32(self, audio_buffer: np.array):
+    @staticmethod
+    def _to_float32(audio_buffer: np.array):
         audio_fp32 = np.divide(audio_buffer, np.iinfo(audio_buffer.dtype).max, dtype=np.float32)
         return audio_fp32
 

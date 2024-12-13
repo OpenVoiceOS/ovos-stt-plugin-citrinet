@@ -62,6 +62,9 @@ setup(
     license='Apache-2.0',
     packages=['ovos_stt_plugin_citrinet'],
     install_requires=required("requirements.txt"),
+    extras_require={
+        'extra': ["soxr"]
+    },
     zip_safe=True,
     classifiers=[
         'Development Status :: 3 - Alpha',
