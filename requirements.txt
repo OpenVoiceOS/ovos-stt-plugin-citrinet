@@ -2,7 +2,7 @@ ovos-plugin-manager>=0.0.24
 ovos-utils~=0.0,>=0.0.30
 SpeechRecognition~=3.8
 # model
-torch>=2.1.0
+torch>=1.13.1
 onnxruntime
 sentencepiece
 # resampling
