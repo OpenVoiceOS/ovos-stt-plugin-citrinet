@@ -63,7 +63,7 @@ setup(
     packages=['ovos_stt_plugin_citrinet'],
     install_requires=required("requirements.txt"),
     extras_require={
-        'extra': ["soxr"]
+        'resampling': ["soxr"]
     },
     zip_safe=True,
     classifiers=[
