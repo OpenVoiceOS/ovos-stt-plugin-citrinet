@@ -2,7 +2,7 @@ ovos-plugin-manager>=0.0.24
 ovos-utils~=0.0,>=0.0.30
 SpeechRecognition~=3.8
 # model
-torch
+torch>=2.1.0
 onnxruntime
 sentencepiece
 # resampling
@@ -10,3 +10,4 @@ soxr
 pydub
 # huggingface
 huggingface-hub
+numpy<2.0.0
