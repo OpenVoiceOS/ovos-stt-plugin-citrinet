@@ -42,34 +42,16 @@ from ovos_utils.log import LOG
 
 
 class Model:
-    langs = {
-        "en": {
-            "model": "neongeckocom/stt_en_citrinet_512_gamma_0_25",
-        },
-        "es": {
-            "model": "neongeckocom/stt_es_citrinet_512_gamma_0_25",
-        },
-        "fr": {
-            "model": "neongeckocom/stt_fr_citrinet_512_gamma_0_25",
-        },
-        "de": {
-            "model": "neongeckocom/stt_de_citrinet_512_gamma_0_25",
-        },
-        "it": {
-            "model": "neongeckocom/stt_it_citrinet_512_gamma_0_25",
-        },
-        "uk": {
-            "model": "neongeckocom/stt_uk_citrinet_512_gamma_0_25",
-        },
-        "nl": {
-            "model": "neongeckocom/stt_nl_citrinet_512_gamma_0_25",
-        },
-        "pt": {
-            "model": "neongeckocom/stt_pt_citrinet_512_gamma_0_25",
-        },
-        "ca": {
-            "model": "projecte-aina/stt-ca-citrinet-512"
-        },
+    default_models = {
+        "en": "neongeckocom/stt_en_citrinet_512_gamma_0_25",
+        "es": "neongeckocom/stt_es_citrinet_512_gamma_0_25",
+        "fr": "neongeckocom/stt_fr_citrinet_512_gamma_0_25",
+        "de": "neongeckocom/stt_de_citrinet_512_gamma_0_25",
+        "it": "neongeckocom/stt_it_citrinet_512_gamma_0_25",
+        "uk": "neongeckocom/stt_uk_citrinet_512_gamma_0_25",
+        "nl": "neongeckocom/stt_nl_citrinet_512_gamma_0_25",
+        "pt": "neongeckocom/stt_pt_citrinet_512_gamma_0_25",
+        "ca": "projecte-aina/stt-ca-citrinet-512",
     }
     sample_rate = 16000
     subfolder_name = "onnx"
@@ -81,9 +63,9 @@ class Model:
             self._init_model(lang)
 
     def _init_model(self, lang: str):
-        if lang not in self.langs:
-            raise ValueError(f"Unsupported language '{lang}'. Available languages: {list(self.langs.keys())}")
-        model_name = self.langs[lang]["model"]
+        if lang not in self.default_models:
+            raise ValueError(f"Unsupported language '{lang}'. Available languages: {list(self.default_models.keys())}")
+        model_name = self.default_models[lang]
         self._init_preprocessor(model_name)
         self._init_encoder(model_name)
         self._init_tokenizer(model_name)

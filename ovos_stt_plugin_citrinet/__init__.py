@@ -17,7 +17,7 @@ class CitrinetSTT(STT):
         lang = self.lang.split("-")[0]
         if lang not in self.available_languages:
             raise ValueError(f"unsupported language, must be one of {self.available_languages}")
-        LOG.info(f"preloading model: {Model.langs[lang]}")
+        LOG.info(f"preloading model: {Model.default_models[lang]}")
         self.load_model(lang)
 
     def load_model(self, lang: str):
@@ -27,7 +27,7 @@ class CitrinetSTT(STT):
 
     @property
     def available_languages(self) -> set:
-        return set(Model.langs)
+        return set(Model.default_models.keys())
 
     def execute(self, audio: AudioData, language: Optional[str] = None):
         '''
