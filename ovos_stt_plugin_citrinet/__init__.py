@@ -4,15 +4,14 @@ import numpy as np
 from ovos_plugin_manager.templates.stt import STT
 from ovos_utils.log import LOG
 from speech_recognition import AudioData
-from streaming_stt_nemo import Model, available_languages
+
+from ovos_stt_plugin_citrinet.engine import Model, available_languages
 
 
 class CitrinetSTT(STT):
 
     def __init__(self, config: dict = None):
         super().__init__(config)
-        # replace default Neon model with project aina model
-        Model.langs["ca"]["model"] = "projecte-aina/stt-ca-citrinet-512"
         self.lang = self.config.get('lang') or "ca"
         self.models: Dict[str, Model] = {}
         lang = self.lang.split("-")[0]
