@@ -1,4 +1,10 @@
 ovos-plugin-manager>=0.0.24
 ovos-utils~=0.0,>=0.0.30
-streaming-stt-nemo~=0.2
 SpeechRecognition~=3.8
+# model
+torch>=1.13.1
+onnxruntime
+sentencepiece
+# huggingface
+huggingface-hub
+numpy<2.0.0

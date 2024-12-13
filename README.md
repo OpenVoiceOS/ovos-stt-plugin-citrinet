@@ -9,6 +9,12 @@ for [Nemo Citrinet](https://docs.nvidia.com/nemo-framework/user-guide/latest/nem
 
 ## Install
 
+by default this plugin will install the full pytorch, to avoid dragging all the dependencies it is recommended you install the cpu only version of pytorch **before** installing the plugin
+
+`pip install torch==2.1.0+cpu  -f https://download.pytorch.org/whl/torch_stable.html`
+
+If you skip the step above then the full pytorch will be installed together with the plugin
+
 `pip install ovos-stt-plugin-citrinet`
 
 ## Configuration
