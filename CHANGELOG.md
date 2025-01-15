@@ -1,20 +1,12 @@
 # Changelog
 
-## [0.0.4a2](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.4a2) (2024-12-13)
+## [0.0.5a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.5a1) (2025-01-15)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.4a1...0.0.4a2)
-
-**Merged pull requests:**
-
-- reduce dependencies [\#10](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/10) ([JarbasAl](https://github.com/JarbasAl))
-
-## [0.0.4a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.4a1) (2024-12-13)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.3...0.0.4a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.4...0.0.5a1)
 
 **Merged pull requests:**
 
-- packaging:drop dependency on neon package [\#8](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/8) ([JarbasAl](https://github.com/JarbasAl))
+- Update spanish model [\#12](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/12) ([JarbasAl](https://github.com/JarbasAl))
 
 
 
