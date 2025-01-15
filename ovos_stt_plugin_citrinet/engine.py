@@ -44,7 +44,7 @@ from ovos_utils.log import LOG
 class Model:
     default_models = {
         "en": "neongeckocom/stt_en_citrinet_512_gamma_0_25",
-        "es": "neongeckocom/stt_es_citrinet_512_gamma_0_25",
+        "es": "Jarbas/stt_es_citrinet_512_onnx",
         "fr": "neongeckocom/stt_fr_citrinet_512_gamma_0_25",
         "de": "neongeckocom/stt_de_citrinet_512_gamma_0_25",
         "it": "neongeckocom/stt_it_citrinet_512_gamma_0_25",
