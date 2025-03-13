@@ -1,12 +1,12 @@
 # Changelog
 
-## [0.0.5a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.5a1) (2025-01-15)
+## [0.0.7a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.7a1) (2025-03-13)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.4...0.0.5a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.6...0.0.7a1)
 
 **Merged pull requests:**
 
-- Update spanish model [\#12](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/12) ([JarbasAl](https://github.com/JarbasAl))
+- fix:lang handling [\#14](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/14) ([JarbasAl](https://github.com/JarbasAl))
 
 
 
