@@ -51,7 +51,7 @@ class Model:
         "uk": "neongeckocom/stt_uk_citrinet_512_gamma_0_25",
         "nl": "neongeckocom/stt_nl_citrinet_512_gamma_0_25",
         "pt": "neongeckocom/stt_pt_citrinet_512_gamma_0_25",
-        "ca": "projecte-aina/stt-ca-citrinet-512",
+        "ca": "neongeckocom/stt_ca_citrinet_512_gamma_0_25",
     }
     sample_rate = 16000
     subfolder_name = "onnx"
