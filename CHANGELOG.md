@@ -1,20 +1,13 @@
 # Changelog
 
-## [0.0.8a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.8a1) (2025-04-09)
+## [0.0.9a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.9a1) (2025-06-08)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.7a1...0.0.8a1)
-
-**Merged pull requests:**
-
-- fix: catalan [\#16](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/16) ([JarbasAl](https://github.com/JarbasAl))
-
-## [0.0.7a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.7a1) (2025-03-13)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.6...0.0.7a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.8...0.0.9a1)
 
 **Merged pull requests:**
 
-- fix:lang handling [\#14](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/14) ([JarbasAl](https://github.com/JarbasAl))
+- fix: compatibility with ovos-plugin-manager 1.X.X [\#19](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/19) ([JarbasAl](https://github.com/JarbasAl))
+- Update command for torch+cpu only [\#18](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/18) ([denics](https://github.com/denics))
 
 
 

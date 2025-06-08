@@ -1,11 +1,12 @@
 from typing import Optional, Dict
 
 import numpy as np
+from ovos_config import Configuration
 from ovos_plugin_manager.templates.stt import STT
+from ovos_stt_plugin_citrinet.engine import Model
+from ovos_utils import classproperty
 from ovos_utils.log import LOG
 from speech_recognition import AudioData
-from ovos_config import Configuration
-from ovos_stt_plugin_citrinet.engine import Model
 
 
 class CitrinetSTT(STT):
@@ -25,8 +26,8 @@ class CitrinetSTT(STT):
             self.models[lang] = Model(lang=lang)
         return self.models[lang]
 
-    @property
-    def available_languages(self) -> set:
+    @classproperty
+    def available_languages(cls) -> set:
         return set(Model.default_models.keys())
 
     def execute(self, audio: AudioData, language: Optional[str] = None):
@@ -54,7 +55,6 @@ class CitrinetSTT(STT):
 
 
 if __name__ == "__main__":
-
     b = CitrinetSTT({"lang": "es"})
     from speech_recognition import Recognizer, AudioFile
 
@@ -66,4 +66,3 @@ if __name__ == "__main__":
     print(a)
     # bon dia em dic abram orriols i garcia vaig néixer el vint de desembre del mil noucents norantasis a berga i sóc periodista
     # bon dia em dic abramriols i garcia vaig néixer el vint de desembre del mil nou-cents noranta-sis a berga i sóc periodista
-
