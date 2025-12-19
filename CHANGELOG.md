@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.10a3](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.10a3) (2025-12-19)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.10a2...0.0.10a3)
+
+**Merged pull requests:**
+
+- chore\(deps\): update actions/setup-python action to v6 [\#29](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/29) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update actions/checkout action to v6 [\#28](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/28) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.0.10a2](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.10a2) (2025-12-18)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.10a1...0.0.10a2)
