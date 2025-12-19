@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.10a5](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.10a5) (2025-12-19)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.10a4...0.0.10a5)
+
+**Merged pull requests:**
+
+- chore\(deps\): update pilosus/action-pip-license-checker action to v3 [\#31](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/31) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.0.10a4](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.10a4) (2025-12-19)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.10a3...0.0.10a4)
