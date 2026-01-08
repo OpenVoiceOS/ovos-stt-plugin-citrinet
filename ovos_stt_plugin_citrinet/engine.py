@@ -30,15 +30,14 @@
 
 import ctypes
 import gc
-import os.path
-from typing import Optional
-
 import numpy as np
 import onnxruntime as ort
+import os.path
 import sentencepiece as spm
 import torch  # TODO - try to drop dependency if we can convert preprocessor to onnx, currently not possible
 from huggingface_hub import hf_hub_download
 from ovos_utils.log import LOG
+from typing import Optional
 
 
 class Model:
@@ -53,19 +52,28 @@ class Model:
         "pt": "neongeckocom/stt_pt_citrinet_512_gamma_0_25",
         "ca": "neongeckocom/stt_ca_citrinet_512_gamma_0_25",
     }
-    sample_rate = 16000
-    subfolder_name = "onnx"
 
-    def __init__(self, lang: str, model_folder: Optional[str] = None):
+    def __init__(self, lang: str,
+                 hf_model: Optional[str] = None,
+                 model_folder: Optional[str] = None,
+                 sample_rate=16000,
+                 subfolder_name="onnx"):
+        self.sample_rate = sample_rate
+        self.subfolder_name = subfolder_name
         if model_folder:
             self._init_model_from_path(model_folder)
+        elif hf_model:
+            self._init_model_from_hf(hf_model)
         else:
-            self._init_model(lang)
+            self._init_model_from_lang(lang)
 
-    def _init_model(self, lang: str):
+    def _init_model_from_lang(self, lang: str):
         if lang not in self.default_models:
             raise ValueError(f"Unsupported language '{lang}'. Available languages: {list(self.default_models.keys())}")
         model_name = self.default_models[lang]
+        self._init_model_from_hf(model_name)
+
+    def _init_model_from_hf(self, model_name: str):
         self._init_preprocessor(model_name)
         self._init_encoder(model_name)
         self._init_tokenizer(model_name)

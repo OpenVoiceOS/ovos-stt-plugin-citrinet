@@ -1,13 +1,53 @@
 # Changelog
 
-## [0.0.9a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.9a1) (2025-06-08)
+## [0.1.0a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.1.0a1) (2026-01-08)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.8...0.0.9a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.10a5...0.1.0a1)
 
 **Merged pull requests:**
 
-- fix: compatibility with ovos-plugin-manager 1.X.X [\#19](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/19) ([JarbasAl](https://github.com/JarbasAl))
-- Update command for torch+cpu only [\#18](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/18) ([denics](https://github.com/denics))
+- feat: allow huggingface models [\#32](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/32) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.0.10a5](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.10a5) (2025-12-19)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.10a4...0.0.10a5)
+
+**Merged pull requests:**
+
+- chore\(deps\): update pilosus/action-pip-license-checker action to v3 [\#31](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/31) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [0.0.10a4](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.10a4) (2025-12-19)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.10a3...0.0.10a4)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency python to 3.14 [\#24](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/24) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [0.0.10a3](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.10a3) (2025-12-19)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.10a2...0.0.10a3)
+
+**Merged pull requests:**
+
+- chore\(deps\): update actions/setup-python action to v6 [\#29](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/29) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update actions/checkout action to v6 [\#28](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/28) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [0.0.10a2](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.10a2) (2025-12-18)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.10a1...0.0.10a2)
+
+**Merged pull requests:**
+
+- chore: Configure Renovate [\#23](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/23) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [0.0.10a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.10a1) (2025-11-22)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.9...0.0.10a1)
+
+**Merged pull requests:**
+
+- Update requirements.txt [\#21](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/21) ([JarbasAl](https://github.com/JarbasAl))
 
 
 
