@@ -84,5 +84,5 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     keywords='ovos plugin stt',
-    entry_points={'mycroft.plugin.stt': PLUGIN_ENTRY_POINT}
+    entry_points={'opm.stt': PLUGIN_ENTRY_POINT}
 )
