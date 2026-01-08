@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.0a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.1.0a1) (2026-01-08)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.10a5...0.1.0a1)
+
+**Merged pull requests:**
+
+- feat: allow huggingface models [\#32](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/32) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.10a5](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.0.10a5) (2025-12-19)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.0.10a4...0.0.10a5)
