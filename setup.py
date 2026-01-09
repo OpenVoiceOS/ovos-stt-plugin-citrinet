@@ -7,7 +7,6 @@ BASEDIR = os.path.abspath(os.path.dirname(__file__))
 
 def get_version():
     """ Find the version of the package"""
-    version = None
     version_file = os.path.join(BASEDIR, 'ovos_stt_plugin_citrinet', 'version.py')
     major, minor, build, alpha = (None, None, None, None)
     with open(version_file) as f:
@@ -55,21 +54,18 @@ PLUGIN_ENTRY_POINT = 'ovos-stt-plugin-citrinet = ovos_stt_plugin_citrinet:Citrin
 setup(
     name='ovos-stt-plugin-citrinet',
     version=get_version(),
-    description='A citrinet stt plugin for mycroft',
+    description='A citrinet stt plugin for OpenVoiceOS',
     url='https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet',
     author='JarbasAi',
     author_email='jarbasai@mailfence.com',
     license='Apache-2.0',
     packages=['ovos_stt_plugin_citrinet'],
     install_requires=required("requirements.txt"),
-    extras_require={
-        'resampling': ["soxr"]
-    },
     zip_safe=True,
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache Software License'
+        'License :: OSI Approved :: Apache Software License',
     ],
     keywords='ovos plugin stt',
     entry_points={'opm.stt': PLUGIN_ENTRY_POINT}
