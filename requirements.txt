@@ -1,6 +1,6 @@
-ovos-plugin-manager>=2.1.0,<3.0.0
-ovos-utils~=0.0,>=0.0.30
-SpeechRecognition~=3.8
+ovos-plugin-manager>=2.1.1,<3.0.0
+ovos-utils>=0.8.4,<1.0.0
+
 # model
 torch>=1.13.1
 onnxruntime

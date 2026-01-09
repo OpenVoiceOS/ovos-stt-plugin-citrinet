@@ -1,11 +1,11 @@
-import numpy as np
 import os
+from typing import Optional, Dict
+
 from ovos_config import Configuration
 from ovos_plugin_manager.templates.stt import STT
+from ovos_plugin_manager.utils.audio import AudioData, AudioFile
 from ovos_utils import classproperty
 from ovos_utils.log import LOG
-from speech_recognition import AudioData
-from typing import Optional, Dict
 
 from ovos_stt_plugin_citrinet.engine import Model
 
@@ -56,8 +56,8 @@ class CitrinetSTT(STT):
             raise ValueError(f"unsupported language '{lang}', must be one of {self.available_languages}")
         model = self.load_model(lang)
 
-        audio_buffer = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
-        transcriptions = model.stt(audio_buffer, audio.sample_rate)
+        audio_buffer = audio.get_np_float32(model.sample_rate)
+        transcriptions = model.stt(audio_buffer)
 
         if not transcriptions:
             LOG.debug("Transcription is empty")
@@ -66,14 +66,12 @@ class CitrinetSTT(STT):
 
 
 if __name__ == "__main__":
-    b = CitrinetSTT({"lang": "es"})
-    from speech_recognition import Recognizer, AudioFile
+    b = CitrinetSTT({"lang": "en"})
 
-    jfk = "/home/miro/PycharmProjects/ovos-stt-plugin-vosk/example.wav"
+    jfk = "/home/miro/PycharmProjects/ovos-stt-plugin-fasterwhisper/jfk.wav"
     with AudioFile(jfk) as source:
-        audio = Recognizer().record(source)
+        audio = source.read()
 
-    a = b.execute(audio, language="es")
+    a = b.execute(audio, language="en")
     print(a)
-    # bon dia em dic abram orriols i garcia vaig néixer el vint de desembre del mil noucents norantasis a berga i sóc periodista
-    # bon dia em dic abramriols i garcia vaig néixer el vint de desembre del mil nou-cents noranta-sis a berga i sóc periodista
+    # and so my fellow american ask not what your country can do for you ask what you can do for your country
