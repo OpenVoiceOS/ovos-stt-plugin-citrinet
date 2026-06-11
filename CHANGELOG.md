@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1a9](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.1.1a9) (2026-06-11)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.1.1a1...0.1.1a9)
+
+**Merged pull requests:**
+
+- docs: add TigreGotico attribution, link ILENIA [\#38](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/38) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.1.1a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.1.1a1) (2026-01-09)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.1.0...0.1.1a1)
