@@ -68,5 +68,11 @@ setup(
         'License :: OSI Approved :: Apache Software License',
     ],
     keywords='ovos plugin stt',
-    entry_points={'opm.stt': PLUGIN_ENTRY_POINT}
+    entry_points={'opm.stt': PLUGIN_ENTRY_POINT},
+    extras_require={
+        'test': [
+            'pytest',
+            'ovoscope',
+        ]
+    }
 )
