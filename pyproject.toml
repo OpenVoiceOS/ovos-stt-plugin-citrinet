@@ -27,7 +27,12 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-test = ["pytest", "ovoscope"]
+test = [
+    "ovoscope>=0.13.1",
+    "ovos-dinkum-listener",
+    "pytest>=7.0.0",
+    "pytest-timeout>=2.0.0",
+]
 
 [project.entry-points."opm.stt"]
 "ovos-stt-plugin-citrinet" = "ovos_stt_plugin_citrinet:CitrinetSTT"
