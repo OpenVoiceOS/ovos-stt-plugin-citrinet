@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1a10](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.1.1a10) (2026-06-15)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.1.1a9...0.1.1a10)
+
+**Merged pull requests:**
+
+- test: ovoscope listener e2e \(real citrinet STT\) [\#40](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/40) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.1.1a9](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.1.1a9) (2026-06-11)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.1.1a1...0.1.1a9)
