@@ -10,9 +10,9 @@ jobs:
     uses: OpenVoiceOS/gh-automations/.github/workflows/license-check.yml@dev
     secrets: inherit
     with:
-      # Allow:
-      #   - MPL-2.0 (tqdm, reported "MPL-2.0 AND MIT") — file-level copyleft, safe as a library.
-      #   - NVIDIA's redistributable CUDA runtime licenses pulled in transitively by torch;
-      #     these libraries are standard runtime deps and are not redistributed by this plugin.
-      exclude_licenses: '(^Mozilla Public License.*|.*MPL-2\.0.*|.*NVIDIA.*|.*Proprietary.*)'
-      exclude_packages: '(?i:^(nvidia-.*|cuda-.*|triton)$)'
+      # tqdm's "MPL-2.0 AND MIT" is classified WeakCopyleft but its primary
+      # license is MIT (permissive). torch pulls NVIDIA's redistributable CUDA
+      # runtime libraries (reported as proprietary "Other"); these are standard
+      # transitive runtime deps and are not redistributed by this plugin.
+      exclude_packages: '^(tqdm|nvidia-|cuda-|triton).*'
+      exclude_licenses: '^(Mozilla Public License|MPL).*'
