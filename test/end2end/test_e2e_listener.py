@@ -9,6 +9,7 @@ network access is required after the first run.
 Fixture: test/fixtures/command.wav — 16 kHz mono, "what time is it in london"
 """
 
+import importlib.util
 import os
 from pathlib import Path
 
@@ -18,6 +19,14 @@ pytest.importorskip("ovoscope", reason="ovoscope not installed")
 pytest.importorskip("ovos_stt_plugin_citrinet", reason="citrinet plugin not installed")
 
 FIXTURE = Path(__file__).parent / "fixtures" / "command.wav"
+
+# The MiniListener pipeline needs ovos-dinkum-listener at runtime; skip the
+# pipeline tests where it is unavailable (the dedicated ovoscope workflow
+# installs the test extras and exercises them for real).
+requires_dinkum = pytest.mark.skipif(
+    importlib.util.find_spec("ovos_dinkum_listener") is None,
+    reason="ovos-dinkum-listener not installed",
+)
 
 
 @pytest.fixture(scope="module")
@@ -55,6 +64,7 @@ class TestDirectTranscription:
         )
 
 
+@requires_dinkum
 class TestListenerPipeline:
     """Full pipeline: audio file → MiniListener → recognizer_loop:utterance."""
 
