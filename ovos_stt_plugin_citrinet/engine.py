@@ -28,15 +28,12 @@
 # NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE,  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import ctypes
-import gc
 import numpy as np
 import onnxruntime as ort
 import os.path
 import sentencepiece as spm
 import torch  # TODO - try to drop dependency if we can convert preprocessor to onnx, currently not possible
 from huggingface_hub import hf_hub_download
-from ovos_utils.log import LOG
 from typing import Optional
 
 
@@ -77,7 +74,6 @@ class Model:
         self._init_preprocessor(model_name)
         self._init_encoder(model_name)
         self._init_tokenizer(model_name)
-        self._trim_memory()
 
     def _init_model_from_path(self, path: str):
         if not os.path.isdir(path):
@@ -88,7 +84,6 @@ class Model:
         self._init_preprocessor(preprocessor_path)
         self._init_encoder(encoder_path)
         self._init_tokenizer(tokenizer_path)
-        self._trim_memory()
 
     def _init_preprocessor(self, model_name: str):
         if os.path.isfile(model_name):
@@ -145,42 +140,10 @@ class Model:
             previous = p
         return decoded_prediction
 
-    def stt(self, audio_buffer: np.array, sr: int):
-        audio_fp32 = self._to_float32(audio_buffer)
-        audio_16k = self._resample(audio_fp32, sr)
-
-        processed_signal, processed_signal_len = self._run_preprocessor(audio_16k)
+    def stt(self, audio_buffer: np.array):
+        processed_signal, processed_signal_len = self._run_preprocessor(audio_buffer)
         logits = self._run_encoder(processed_signal, processed_signal_len)
-        current_hypotheses = self._run_tokenizer(logits)
-
-        self._trim_memory()
-        return current_hypotheses
-
-    @staticmethod
-    def _trim_memory():
-        """
-        If possible, gives memory allocated by PyTorch back to the system
-        """
-        libc = ctypes.CDLL("libc.so.6")
-        libc.malloc_trim(0)
-        gc.collect()
-
-    def _resample(self, audio_fp32: np.array, sr: int):
-        if sr == self.sample_rate:
-            return audio_fp32
-        try:
-            import soxr
-        except ImportError:
-            LOG.error(
-                f"Either provide audio at {self.sample_rate} sample rate or install soxr for automatic resampling")
-            raise
-        audio_16k = soxr.resample(audio_fp32, sr, self.sample_rate)
-        return audio_16k
-
-    @staticmethod
-    def _to_float32(audio_buffer: np.array):
-        audio_fp32 = np.divide(audio_buffer, np.iinfo(audio_buffer.dtype).max, dtype=np.float32)
-        return audio_fp32
+        return self._run_tokenizer(logits)
 
 
 __all__ = ["Model"]
