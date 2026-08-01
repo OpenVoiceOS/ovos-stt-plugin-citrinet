@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1a11](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.1.1a11) (2026-08-01)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.1.1a10...0.1.1a11)
+
+**Merged pull requests:**
+
+- docs: rewrite README in Simplified Technical English [\#44](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/44) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.1.1a10](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.1.1a10) (2026-06-15)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.1.1a9...0.1.1a10)
