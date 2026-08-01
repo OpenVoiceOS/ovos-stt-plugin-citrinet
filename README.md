@@ -1,3 +1,10 @@
+> **⚠️ This plugin is archived.** Use
+> [ovos-stt-plugin-onnx-asr](https://github.com/TigreGotico/ovos-stt-plugin-onnx-asr)
+> instead — it runs the same Citrinet models (and more NeMo architectures) through
+> [onnx-asr](https://github.com/istupakov/onnx-asr) without pytorch or NeMo.
+> Ready-to-use ONNX Citrinet models for 13+ languages live in the
+> [OpenVoiceOS STT/ASR collection](https://huggingface.co/collections/OpenVoiceOS/stt-asr-onnx-699321e8732462509c642fbe).
+
 # OVOS Citrinet STT
 
 ## Description
