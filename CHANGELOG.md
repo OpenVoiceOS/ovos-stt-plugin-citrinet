@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1a12](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.1.1a12) (2026-08-01)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.1.1a11...0.1.1a12)
+
+**Merged pull requests:**
+
+- docs: point archived plugin to ovos-stt-plugin-onnx-asr [\#46](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/pull/46) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.1.1a11](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/tree/0.1.1a11) (2026-08-01)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet/compare/0.1.1a10...0.1.1a11)
